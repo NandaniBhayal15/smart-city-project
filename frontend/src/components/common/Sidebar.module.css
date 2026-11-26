@@ -1,0 +1,109 @@
+.sidebar {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: var(--sidebar-width);
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logoIcon { color: var(--color-primary); }
+.logoText {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.userCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-border-light);
+  background: var(--color-primary-light);
+}
+
+.avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #7c3aed 100%);
+  color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.875rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.userName { font-size: 0.875rem; font-weight: 600; color: var(--color-text); }
+.userRole {
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  text-transform: capitalize;
+}
+
+.nav { flex: 1; padding: var(--space-md) var(--space-sm); }
+
+.navSection {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: var(--space-sm) var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.5rem var(--space-sm);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  text-decoration: none;
+  margin-bottom: 2px;
+}
+
+.navItem:hover {
+  background: var(--color-border-light);
+  color: var(--color-text);
+}
+
+.active {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%);
+  color: var(--color-primary);
+  font-weight: 700;
+  border-left: 3px solid var(--color-primary);
+}
+
+.sidebarFooter {
+  padding: var(--space-md) var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.logoutBtn {
+  color: var(--color-danger);
+}
+.logoutBtn:hover { background: #fee2e2; }
+
+@media (max-width: 768px) {
+  .sidebar { transform: translateX(-100%); }
+}

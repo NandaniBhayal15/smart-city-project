@@ -1,0 +1,92 @@
+.page { }
+.header { display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-xl); }
+.header h1 { font-size: 1.5rem; font-weight: 700; color: var(--color-text); }
+.header p { color: var(--color-text-secondary); font-size: 0.875rem; }
+
+.selectorCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+.selectorGrid { display: grid; grid-template-columns: 1fr auto 1fr; gap: var(--space-lg); align-items: end; margin-bottom: var(--space-lg); }
+.vsLabel { font-size: 1.25rem; font-weight: 800; color: var(--color-text-muted); text-align: center; padding-bottom: 0.6rem; }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 0.875rem; font-weight: 600; color: var(--color-text); }
+.field select {
+  padding: 0.625rem 0.875rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  outline: none;
+}
+.field select:focus { border-color: var(--color-primary); }
+
+.compareBtn {
+  display: block; width: fit-content; margin: 0 auto;
+  background: var(--color-primary); color: white;
+  padding: 0.75rem 2rem; border-radius: var(--radius-md);
+  font-size: 1rem; font-weight: 600; border: none;
+  transition: background 0.15s;
+}
+.compareBtn:hover:not(:disabled) { background: var(--color-primary-dark); }
+.compareBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.winnerCard {
+  background: #fefce8; border: 1.5px solid #fde68a;
+  border-radius: var(--radius-xl); padding: var(--space-xl);
+  display: flex; align-items: center; gap: var(--space-lg);
+  margin-bottom: var(--space-lg); flex-wrap: wrap;
+}
+.winnerCard h2 { font-size: 1.5rem; font-weight: 700; }
+.winnerCard p { color: var(--color-text-secondary); }
+.scores { margin-left: auto; text-align: right; font-size: 0.875rem; display: flex; flex-direction: column; gap: 2px; }
+
+.noWinnerCard {
+  background: var(--color-border-light); border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl); padding: var(--space-lg);
+  color: var(--color-text-secondary); text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.warnings {
+  background: #fff7ed; border: 1px solid #fed7aa;
+  border-radius: var(--radius-md); padding: var(--space-md);
+  margin-bottom: var(--space-lg); font-size: 0.875rem; color: #9a3412;
+}
+.warnings p { margin-bottom: 4px; }
+
+.section { margin-bottom: var(--space-xl); }
+.sectionTitle { font-size: 1.125rem; font-weight: 600; margin-bottom: var(--space-md); }
+
+.tableWrap { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: auto; }
+.table { width: 100%; border-collapse: collapse; }
+.table th { padding: 0.75rem 1rem; text-align: left; font-size: 0.8125rem; font-weight: 600; color: var(--color-text-secondary); background: var(--color-bg); border-bottom: 1px solid var(--color-border); text-transform: uppercase; letter-spacing: 0.05em; }
+.table td { padding: 0.875rem 1rem; border-bottom: 1px solid var(--color-border-light); font-size: 0.9375rem; }
+.table tr:last-child td { border-bottom: none; }
+.label { color: var(--color-text-muted); font-size: 0.8125rem; }
+.noData { color: var(--color-text-muted); font-style: italic; }
+
+.chartsGrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin-bottom: var(--space-xl); }
+.chartCard { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); }
+.chartCard h3 { font-size: 1rem; font-weight: 600; margin-bottom: var(--space-md); }
+
+.scoringInfo { background: var(--color-primary-light); border: 1px solid #bfdbfe; border-radius: var(--radius-lg); padding: var(--space-lg); }
+.scoringInfo h3 { font-size: 1rem; font-weight: 600; margin-bottom: var(--space-sm); color: var(--color-primary-dark); }
+.scoringInfo p { font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.7; }
+
+.placeholder { display: flex; flex-direction: column; align-items: center; gap: var(--space-md); padding: 4rem; color: var(--color-text-muted); }
+
+.spin { animation: spin 1s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+@media (max-width: 768px) {
+  .selectorGrid { grid-template-columns: 1fr; }
+  .vsLabel { display: none; }
+  .chartsGrid { grid-template-columns: 1fr; }
+}
