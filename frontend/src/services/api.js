@@ -1,7 +1,7 @@
 // Axios instance with JWT interceptors
 import axios from 'axios';
 
-const BASE_URL = '/api/v1';
+const BASE_URL = 'https://smart-city-project-9r0t.onrender.com/api/v1';
 
 const api = axios.create({
   baseURL: BASE_URL,
